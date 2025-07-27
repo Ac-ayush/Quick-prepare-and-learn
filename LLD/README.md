@@ -5,3 +5,6 @@
 ### 🚀 STEPS TO FOLLOW
 
 - [Learn the OOP concepts](./OOP/OOP.md)
+- [Learn the Design Principles](./DesignPrinciples/SOLID.md)
+    - [SOLID](./DesignPrinciples/SOLID.md)
+    - [Others](./DesignPrinciples/Others.md)
