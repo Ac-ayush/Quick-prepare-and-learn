@@ -1,6 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+string vehicleTypeToStr(vehicleType type) {
+    switch (type) {
+        case vehicleType::BIKE: return "BIKE";
+        case vehicleType::CAR: return "CAR";
+        case vehicleType::TRUCK: return "TRUCK";
+        case vehicleType::BUS: return "BUS";
+        default: return "UNKNOWN";
+    }
+}
+
+
 enum class vehicleType
 {
     BIKE,
@@ -46,7 +58,7 @@ public:
             cout<<"type : BIKE"<<endl;
             break;
         case vehicleType::BUS:
-            cout<<"type : BIKE"<<endl;
+            cout<<"type : BUS"<<endl;
             break;
         case vehicleType::TRUCK:
             cout<<"type : TRUCK"<<endl;

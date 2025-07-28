@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include "ParkingSpot.cpp"
+#include "Vehicle.cpp"
 using namespace std;
 
 class ParkingLot {
@@ -10,16 +12,17 @@ class ParkingLot {
  public:
   ParkingLot(int compactCount, int regularCount, int largeCount) {
     this->capacity = compactCount + regularCount + largeCount;
-    this->availableSpots = 0;
+    this->availableSpots = capacity;
 
+    int index = 0;
     for (int i = 0; i < compactCount; i++) {
-      spots.push_back(new ParkingSpot(i, SpotSize::COMPACT));
+        spots.push_back(new ParkingSpot(index++, SpotSize::COMPACT));
     }
     for (int i = 0; i < regularCount; i++) {
-      spots.push_back(new ParkingSpot(i, SpotSize::REGULAR));
+        spots.push_back(new ParkingSpot(index++, SpotSize::REGULAR));
     }
     for (int i = 0; i < largeCount; i++) {
-      spots.push_back(new ParkingSpot(i, SpotSize::LARGE));
+        spots.push_back(new ParkingSpot(index++, SpotSize::LARGE));
     }
   }
 
@@ -29,7 +32,7 @@ class ParkingLot {
 
   ParkingSpot* findAvailableSpot(Vehicle* vehicle) {
     for (auto& spot : spots) {
-      if (spot->isAvailable && spot->canFitVehicle(vehicle)) {
+      if (spot->checkIsAvailable() && spot->canFitVehicle(vehicle)) {
         return spot;
       }
     }
@@ -56,7 +59,7 @@ class ParkingLot {
     if (!spotToPark) return false;
 
     if (spotToPark->parkVehicle(vehicle)) {
-      occupiedSpotsdata[vehicle->getLicenceNumber()] = vehicle;
+      occupiedSpotsdata[vehicle->getLicenceNumber()] = spotToPark;
       availableSpots--;
       return true;
     }
@@ -87,7 +90,7 @@ class ParkingLot {
 
   void printOccupancy() {
     cout << " -- parking lot occupancy list details-- " << endl;
-    for (auto& soot : spots) {
+    for (auto& spot : spots) {
       spot->printDetails();
     }
   }

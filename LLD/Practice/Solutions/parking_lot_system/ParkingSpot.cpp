@@ -65,6 +65,7 @@ public:
 
         this->vehicle = vehicle;
         isAvailable = false;
+        return true;
     }
 
     //remove from spot
