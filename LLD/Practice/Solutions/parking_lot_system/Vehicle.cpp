@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+enum class vehicleType
+{
+    BIKE,
+    CAR,
+    TRUCK,
+    BUS
+};
 
 string vehicleTypeToStr(vehicleType type) {
     switch (type) {
@@ -11,15 +18,6 @@ string vehicleTypeToStr(vehicleType type) {
         default: return "UNKNOWN";
     }
 }
-
-
-enum class vehicleType
-{
-    BIKE,
-    CAR,
-    TRUCK,
-    BUS
-};
 
 class Vehicle
 {
