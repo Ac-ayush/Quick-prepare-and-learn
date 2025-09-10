@@ -118,6 +118,89 @@ Drawing Rectangle 4x6
 
 ---
 
-## 8. One-liner Definition
+## 8. How To implement it
+---
+
+### ✅ Step 1: Define a Prototype Interface
+
+- Create an abstract class (or interface) with a `clone()` method.  
+- This ensures every subclass must implement `clone()`.
+```cpp
+class Prototype {
+public:
+    virtual std::unique_ptr<Prototype> clone() = 0;
+    virtual void show() = 0;
+    virtual ~Prototype() {}
+};
+```
+
+---
+
+### ✅ Step 2: Create Concrete Prototypes
+
+- Implement the `clone()` method.  
+- Typically, you use the **copy constructor** (`*this`) to clone the object.  
+
+```cpp
+class ConcretePrototypeA : public Prototype {
+    int value;
+public:
+    ConcretePrototypeA(int v) : value(v) {}
+    std::unique_ptr<Prototype> clone() override {
+        return std::make_unique<ConcretePrototypeA>(*this); // clone itself
+    }
+    void show() override {
+        std::cout << "Prototype A with value " << value << std::endl;
+    }
+};
+
+class ConcretePrototypeB : public Prototype {
+    std::string name;
+public:
+    ConcretePrototypeB(std::string n) : name(n) {}
+    std::unique_ptr<Prototype> clone() override {
+        return std::make_unique<ConcretePrototypeB>(*this);
+    }
+    void show() override {
+        std::cout << "Prototype B with name " << name << std::endl;
+    }
+};
+```
+
+---
+
+### ✅ Step 3: Client Uses Prototypes Instead of `new`
+
+- Create one prototype instance.  
+- Use `clone()` whenever you need a copy.  
+```cpp
+int main() {
+    // Step 1: Create original prototypes
+    std::unique_ptr<Prototype> prototypeA = std::make_unique<ConcretePrototypeA>(42);
+    std::unique_ptr<Prototype> prototypeB = std::make_unique<ConcretePrototypeB>("Ayush");
+
+    // Step 2: Clone objects
+    auto clone1 = prototypeA->clone();
+    auto clone2 = prototypeB->clone();
+
+    // Step 3: Use them
+    clone1->show();
+    clone2->show();
+
+    return 0;
+}
+```
+
+---
+
+### ✅ Output
+```cpp
+Prototype A with value 42
+Prototype B with name Ayush
+```
+
+
+
+## 9. One-liner Definition
 
 **Prototype Pattern = Create new objects by cloning existing ones, instead of instantiating from scratch.**
