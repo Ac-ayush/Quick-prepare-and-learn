@@ -57,3 +57,17 @@ Broadly classified into three categories:
 # ✅ In short:
 **Design Patterns = Best practices to solve common coding problems.**  
 They’re like **lego blocks 🧩 – reusable and easy to combine.**
+
+
+## Learns priority wise
+- Singleton (DB, config)
+- Factory / Abstract Factory (object creation)
+- Builder (complex object creation)
+- Observer / Pub-Sub (events, state management)
+- Strategy (switchable algorithms)
+- Command (API calls, undo/redo, event handling
+- Decorator (middleware, HOCs in React)
+- Proxy (caching, lazy loading, security)
+- Composite (UI trees, DOM, React components)
+- State (FSM, React hooks/components)
+- Chain of Responsibility
