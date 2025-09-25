@@ -1,6 +1,7 @@
-enum class CITY
+enum class City
 {
     Bangalore,
     Mumbai,
-    Channai
+    Channai,
+    Delhi
 };
