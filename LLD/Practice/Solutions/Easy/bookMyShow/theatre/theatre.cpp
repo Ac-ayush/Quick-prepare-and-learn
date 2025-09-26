@@ -9,14 +9,14 @@ class Theatre
     int theatreId;
     string address;
     string theatreName;
-    City* city;
+    City city;
     vector<Screen> screens;
     vector<Show> shows;
 
 public:
     // Constructors
-    Theatre() : theatreId(0), city(nullptr) {}
-    Theatre(int id, const string& name, const string& addr, City* c)
+    Theatre() : theatreId(0), city() {}
+    Theatre(int id, const string& name, const string& addr, City c)
         : theatreId(id), theatreName(name), address(addr), city(c) {}
 
     // Getters & Setters
@@ -44,11 +44,11 @@ public:
         theatreName = name;
     }
 
-    City* getCity() const {
+    City getCity() const {
         return city;
     }
 
-    void setCity(City* c) {
+    void setCity(City c) {
         city = c;
     }
 

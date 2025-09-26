@@ -46,9 +46,9 @@ public:
     }
 
     // Get all shows of a particular movie in a particular city
-    unordered_map<Theatre*, vector<Show>> getAllShow(Movie* movie, City city) {
+    map<Theatre*, vector<Show>> getAllShow(Movie* movie, City city) {
         // get all the theatres of this city
-        unordered_map<Theatre*, vector<Show>> theatreVsShows;
+        map<Theatre*, vector<Show>> theatreVsShows;
 
         vector<Theatre*> theatres;
         if (cityVsTheatre.find(city) != cityVsTheatre.end()) {

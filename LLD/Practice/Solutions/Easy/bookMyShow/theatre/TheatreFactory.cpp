@@ -8,7 +8,7 @@ using namespace std;
 class TheatreFactory {
 public:
     //Only Admin
-    static Theatre createTheatre(int theatreId, const string& name, City* city, const vector<Show>& shows) {
+    static Theatre createTheatre(int theatreId, const string& name, City city, const vector<Show>& shows) {
         Theatre theatre;
         theatre.setTheatreId(theatreId);
         theatre.setTheatreName(name);

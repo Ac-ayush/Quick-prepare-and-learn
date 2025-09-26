@@ -2,21 +2,17 @@
 #include <movie.cpp>
 using namespace std;
 
-class MovieFactory
-{
+class MovieFactory {
 private:
-    // Cache: key = movie name, value = shared_ptr<Movie>
-    static unordered_map<string, shared_ptr<Movie>> movieCache;
+    static unordered_map<string, Movie*> movieCache;
 
 public:
-    static shared_ptr<Movie> createMovie(int id, const string &name, int duration)
-    {
+    static Movie* createMovie(int id, const string& name, int duration) {
         auto it = movieCache.find(name);
-        if (it != movieCache.end())
-        {
-            return it->second; // return existing movie
+        if (it != movieCache.end()) {
+            return it->second; // return cached
         }
-        auto movie = make_shared<Movie>(id, name, duration);
+        Movie* movie = new Movie(id, name, duration);
         movieCache[name] = movie;
         return movie;
     }
