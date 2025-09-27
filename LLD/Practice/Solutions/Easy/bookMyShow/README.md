@@ -5,6 +5,7 @@ A complete C++ implementation of a movie ticket booking system similar to BookMy
 ## 📋 Project Overview
 
 BookMyShow is a console-based movie ticket booking application that allows users to:
+
 - Select from multiple cities (Bangalore, Mumbai, Chennai, Delhi)
 - Browse available movies (Barbie, Oppenheimer)
 - Choose show times at different theatres
@@ -15,11 +16,13 @@ BookMyShow is a console-based movie ticket booking application that allows users
 ## 🏗️ Architecture & Design Patterns
 
 ### **Design Patterns Used:**
+
 - **Singleton Pattern**: `BookingService` ensures only one instance exists
 - **Factory Pattern**: `MovieFactory` and `TheatreFactory` for object creation
 - **Controller Pattern**: `MovieController` and `TheatreController` for business logic
 
 ### **Project Structure:**
+
 ```
 bookMyShow/
 ├── controllers/          # Business logic controllers
@@ -51,26 +54,31 @@ bookMyShow/
 ## 🚀 How to Run
 
 ### **Prerequisites:**
+
 - C++17 compatible compiler (g++, clang++)
 - Make (optional, for using Makefile)
 
 ### **Method 1: Quick Run Script (Recommended)**
+
 ```bash
 ./run.sh
 ```
 
 ### **Method 2: Using Makefile**
+
 ```bash
 make run
 ```
 
 ### **Method 3: Manual Compilation**
+
 ```bash
 g++ -std=c++17 -o bookMyShow main.cpp
 ./bookMyShow
 ```
 
 ### **Method 4: VS Code Code Runner**
+
 1. Open `main.cpp` in VS Code
 2. Click the Code Runner icon ▶️ or press `Ctrl+Alt+N`
 3. The project will compile and run automatically
@@ -78,6 +86,7 @@ g++ -std=c++17 -o bookMyShow main.cpp
 ## 🎯 Features
 
 ### **Core Functionality:**
+
 - ✅ **City Selection**: Choose from 4 major cities
 - ✅ **Movie Selection**: Browse available movies by city
 - ✅ **Show Selection**: View show times at different theatres
@@ -87,6 +96,7 @@ g++ -std=c++17 -o bookMyShow main.cpp
 - ✅ **Multiple Bookings**: Book multiple tickets in one session
 
 ### **Sample Data:**
+
 - **Cities**: Bangalore, Mumbai, Chennai, Delhi
 - **Movies**: Barbie (128 min), Oppenheimer (180 min)
 - **Theatres**: INOX (Bangalore), PVR (Delhi)
@@ -144,6 +154,7 @@ g++ -std=c++17 -o bookMyShow main.cpp
 ## 🔧 Technical Details
 
 ### **Key Classes:**
+
 - **BookingService**: Main service class (Singleton)
 - **MovieController**: Manages movies by city
 - **TheatreController**: Manages theatres and shows
@@ -153,11 +164,13 @@ g++ -std=c++17 -o bookMyShow main.cpp
 - **PaymentService**: Handles payment processing
 
 ### **Memory Management:**
+
 - Dynamic allocation for theatres to avoid scope issues
 - Proper include guards to prevent redefinition errors
 - RAII principles for resource management
 
 ### **Error Handling:**
+
 - Input validation for user choices
 - Empty vector checks
 - Graceful handling of invalid selections
@@ -165,6 +178,7 @@ g++ -std=c++17 -o bookMyShow main.cpp
 ## 🛠️ Build Configuration
 
 ### **Makefile Commands:**
+
 ```bash
 make          # Compile the project
 make run      # Compile and run
@@ -172,6 +186,7 @@ make clean    # Remove compiled files
 ```
 
 ### **Compiler Flags:**
+
 - `-std=c++17`: Use C++17 standard
 - `-Wall -Wextra`: Enable warnings
 - `-o bookMyShow`: Output executable name
@@ -179,6 +194,7 @@ make clean    # Remove compiled files
 ## 📝 Development Notes
 
 ### **Recent Fixes:**
+
 - ✅ Fixed multiple redefinition errors with include guards
 - ✅ Resolved memory management issues with theatre creation
 - ✅ Added proper error handling for empty vectors
@@ -186,6 +202,7 @@ make clean    # Remove compiled files
 - ✅ Added comprehensive input validation
 
 ### **Code Quality:**
+
 - Clean separation of concerns
 - Proper encapsulation
 - Consistent naming conventions
@@ -206,6 +223,7 @@ This project is part of a learning exercise and is available for educational pur
 ## 🎓 Learning Outcomes
 
 This project demonstrates:
+
 - Object-Oriented Programming principles
 - Design patterns (Singleton, Factory, Controller)
 - C++ best practices
