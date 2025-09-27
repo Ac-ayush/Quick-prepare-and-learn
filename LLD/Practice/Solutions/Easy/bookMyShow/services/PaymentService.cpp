@@ -1,4 +1,8 @@
+#ifndef PAYMENTSERVICE_H
+#define PAYMENTSERVICE_H
+
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class PaymentService
@@ -12,3 +16,5 @@ public:
         return true;
     }
 };
+
+#endif // PAYMENTSERVICE_H

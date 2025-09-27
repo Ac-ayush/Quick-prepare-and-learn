@@ -1,14 +1,17 @@
 
+#ifndef BOOKINGDATAFACTORY_H
+#define BOOKINGDATAFACTORY_H
+
 #include <bits/stdc++.h>
-#include "movie.cpp"
-#include "screen.cpp"
-#include "show.cpp"
-#include "seat.cpp"
-#include "city.cpp"
-#include "MovieController.cpp"
-#include "TheatreController.cpp"
-#include "TheatreFactory.cpp"
-#include "MovieFactory.cpp"
+#include "../movie/movie.cpp"
+#include "../theatre/screen.cpp"
+#include "../theatre/show.cpp"
+#include "../theatre/seat.cpp"
+#include "../enums/city.cpp"
+#include "../controllers/MovieController.cpp"
+#include "../controllers/TheatreController.cpp"
+#include "../theatre/TheatreFactory.cpp"
+#include "../movie/MovieFactory.cpp"
 using namespace std;
 
 class BookingDataFactory
@@ -76,14 +79,19 @@ void BookingDataFactory::createTheatres(MovieController &movieController, Theatr
     Movie *barbie = movieController.getMovieByName("BARBIE");
     Movie *oppenheimer = movieController.getMovieByName("OPPENHEIMER");
 
-    Theatre inox = TheatreFactory::createTheatre(
+    // Create theatres dynamically to avoid scope issues
+    Theatre *inox = new Theatre();
+    *inox = TheatreFactory::createTheatre(
         1, "INOX", City::Bangalore,
         {createShow(1, barbie, 10), createShow(2, oppenheimer, 18)});
 
-    Theatre pvr = TheatreFactory::createTheatre(
+    Theatre *pvr = new Theatre();
+    *pvr = TheatreFactory::createTheatre(
         2, "PVR", City::Delhi,
         {createShow(3, barbie, 14), createShow(4, oppenheimer, 20)});
 
-    theatreController.addTheatre(&inox, City::Bangalore);
-    theatreController.addTheatre(&pvr, City::Delhi);
+    theatreController.addTheatre(inox, City::Bangalore);
+    theatreController.addTheatre(pvr, City::Delhi);
 }
+
+#endif // BOOKINGDATAFACTORY_H

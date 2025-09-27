@@ -1,6 +1,9 @@
+#ifndef SHOW_H
+#define SHOW_H
+
 #include <bits/stdc++.h>
-#include <movie.cpp>
-#include <screen.cpp>
+#include "../movie/movie.cpp"
+#include "screen.cpp"
 using namespace std;
 
 class Show
@@ -69,3 +72,5 @@ public:
         bookedSeatIds = seats;
     }
 };
+
+#endif // SHOW_H

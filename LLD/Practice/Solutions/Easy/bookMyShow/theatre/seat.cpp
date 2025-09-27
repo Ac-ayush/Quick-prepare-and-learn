@@ -1,35 +1,46 @@
+#ifndef SEAT_H
+#define SEAT_H
+
 #include <bits/stdc++.h>
-#include <seatCategory.cpp>
+#include "../enums/seatCategory.cpp"
 using namespace std;
 
 class Seat
 {
     int seatId;
     int row;
-    SeatCategory* seatCategory;
+    SeatCategory *seatCategory;
 
 public:
-    int getSeatId(){
+    int getSeatId()
+    {
         return seatId;
     }
 
-    void setSeatId(int seatId){
+    void setSeatId(int seatId)
+    {
         this->seatId = seatId;
     }
 
-    int getRow(){
+    int getRow()
+    {
         return row;
     }
 
-    void setRow(int row){
+    void setRow(int row)
+    {
         this->row = row;
     }
 
-    SeatCategory* getSeatCategory(){
+    SeatCategory *getSeatCategory()
+    {
         return seatCategory;
     }
 
-    void setSeatCategory(SeatCategory* seatCategory){
+    void setSeatCategory(SeatCategory *seatCategory)
+    {
         this->seatCategory = seatCategory;
     }
 };
+
+#endif // SEAT_H

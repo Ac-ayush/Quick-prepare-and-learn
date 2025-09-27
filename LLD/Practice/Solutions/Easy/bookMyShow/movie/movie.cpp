@@ -1,41 +1,53 @@
+#ifndef MOVIE_H
+#define MOVIE_H
+
 #include <bits/stdc++.h>
 using namespace std;
 
-class Movie{
+class Movie
+{
     int movieId;
     string movieName;
     int durationInMinutes;
 
-    public: 
-    Movie(int id, string name, int duration){
+public:
+    Movie(int id, string name, int duration)
+    {
         this->movieId = id;
         this->movieName = name;
-        this->durationInMinutes;
-        //other details like Genere, Language etc.
+        this->durationInMinutes = duration;
+        // other details like Genere, Language etc.
     }
 
-    int getMovieId() {
+    int getMovieId()
+    {
         return movieId;
     }
 
-    void setMovieId(int movieId) {
+    void setMovieId(int movieId)
+    {
         this->movieId = movieId;
     }
 
-    string getMovieName() {
+    string getMovieName()
+    {
         return movieName;
     }
 
-    void setMovieName(string movieName) {
+    void setMovieName(string movieName)
+    {
         this->movieName = movieName;
     }
 
-    int getMovieDuration() {
+    int getMovieDuration()
+    {
         return durationInMinutes;
     }
 
-    void setMovieDuration(int movieDuration) {
+    void setMovieDuration(int movieDuration)
+    {
         this->durationInMinutes = movieDuration;
     }
-
 };
+
+#endif // MOVIE_H

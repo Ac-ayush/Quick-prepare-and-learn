@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
-#include "BookingService.cpp"
+#include "services/BookingService.cpp"
 using namespace std;
 
-int main() {
+int main()
+{
     // ✅ Singleton usage
-    BookingService* bookService = BookingService::getInstance();
+    BookingService *bookService = BookingService::getInstance();
     bookService->initialize();
     bookService->startBookingSession();
 

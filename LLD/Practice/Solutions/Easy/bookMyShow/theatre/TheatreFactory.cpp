@@ -1,14 +1,19 @@
+#ifndef THEATREFACTORY_H
+#define THEATREFACTORY_H
+
 #include <bits/stdc++.h>
-#include <screen.cpp>
-#include <city.cpp>
-#include <show.cpp>
-#include<theatre.cpp>
+#include "screen.cpp"
+#include "../enums/city.cpp"
+#include "show.cpp"
+#include "theatre.cpp"
 using namespace std;
 
-class TheatreFactory {
+class TheatreFactory
+{
 public:
-    //Only Admin
-    static Theatre createTheatre(int theatreId, const string& name, City city, const vector<Show>& shows) {
+    // Only Admin
+    static Theatre createTheatre(int theatreId, const string &name, City city, const vector<Show> &shows)
+    {
         Theatre theatre;
         theatre.setTheatreId(theatreId);
         theatre.setTheatreName(name);
@@ -19,19 +24,24 @@ public:
     }
 
 private:
-    static vector<Screen> createScreens() {
+    static vector<Screen> createScreens()
+    {
         Screen screen;
         screen.setScreenId(1);
         screen.setSeats(createSeats());
-        return {screen};  // initializer list = single-element vector
+        return {screen}; // initializer list = single-element vector
     }
 
-    static vector<Seat> createSeats() {
+    static vector<Seat> createSeats()
+    {
         vector<Seat> seats;
-        seats.reserve(100);   // optimize capacity upfront
-        for (int i = 1; i <= 100; i++) {
-            seats.emplace_back(Seat());  // add 100 Seat objects
+        seats.reserve(100); // optimize capacity upfront
+        for (int i = 1; i <= 100; i++)
+        {
+            seats.emplace_back(Seat()); // add 100 Seat objects
         }
         return seats;
     }
 };
+
+#endif // THEATREFACTORY_H
